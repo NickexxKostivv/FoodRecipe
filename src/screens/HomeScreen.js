@@ -1223,12 +1223,17 @@ export default function HomeScreen() {
         contentContainerStyle={styles.scrollContainer}
         testID="scrollContainer">
         <View style={styles.headerContainer} testID="headerContainer">
-          <Image
-            source={{
-              uri: "https://cdn.pixabay.com/photo/2017/02/23/13/05/avatar-2092113_1280.png",
-            }}
-            style={styles.avatar}
-          />
+          <View style={styles.avatarSection}>
+            <Image
+              source={{
+                uri: "https://cdn.pixabay.com/photo/2017/02/23/13/05/avatar-2092113_1280.png",
+              }}
+              style={styles.avatar}
+            />
+            <Text style={styles.developerText}>
+              This work is by developer Mykola (Nick) Kostiv
+            </Text>
+          </View>
           <Text style={styles.greetingText}>Hello, User!</Text>
         </View>
 
@@ -1249,6 +1254,14 @@ export default function HomeScreen() {
 
         <View testID="foodList">
           <FoodItems foods={filteredfoods} categories={categories} />
+        </View>
+
+        {/* Footer */}
+        <View style={styles.footerContainer}>
+          <Text style={styles.footerText}>
+            This project was created for completing the final course assignment by
+            user and developer Mykola (Nick) Kostiv.
+          </Text>
         </View>
       </ScrollView>
     </View>
@@ -1272,9 +1285,21 @@ const styles = StyleSheet.create({
     marginBottom: hp(2),
     marginTop: hp(-8.5),
   },
+  avatarSection: {
+    flexDirection: "row",
+    alignItems: "center",
+    flex: 1,
+  },
   avatar: {
     height: hp(5),
     width: hp(5.5),
+    marginRight: wp(2),
+  },
+  developerText: {
+    fontSize: hp(1.2),
+    color: "#6B7280", // gray-500
+    fontStyle: "italic",
+    flex: 1,
   },
   greetingText: {
     fontSize: hp(1.7),
@@ -1302,5 +1327,19 @@ const styles = StyleSheet.create({
   },
   highlight: {
     color: "#F59E0B", // amber-400
+  },
+  footerContainer: {
+    marginHorizontal: wp(4),
+    marginTop: hp(4),
+    marginBottom: hp(2),
+    paddingTop: hp(2),
+    borderTopWidth: 1,
+    borderTopColor: "#E5E7EB", // gray-200
+  },
+  footerText: {
+    fontSize: hp(1.4),
+    color: "#6B7280", // gray-500
+    textAlign: "center",
+    lineHeight: hp(2),
   },
 });
