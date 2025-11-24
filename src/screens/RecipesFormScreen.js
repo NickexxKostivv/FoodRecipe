@@ -1,7 +1,18 @@
-import { View,Text,TextInput,TouchableOpacity,Image,StyleSheet,} from "react-native";
+import {
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  Image,
+  StyleSheet,
+  ScrollView,
+} from "react-native";
 import React, { useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import {widthPercentageToDP as wp,heightPercentageToDP as hp,} from "react-native-responsive-screen";
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from "react-native-responsive-screen";
 
 export default function RecipesFormScreen({ route, navigation }) {
   const { recipeToEdit, recipeIndex, onrecipeEdited } = route.params || {};
@@ -10,14 +21,49 @@ export default function RecipesFormScreen({ route, navigation }) {
   const [description, setDescription] = useState(
     recipeToEdit ? recipeToEdit.description : ""
   );
+  const [ingredients, setIngredients] = useState(
+    recipeToEdit && recipeToEdit.ingredients
+      ? Array.isArray(recipeToEdit.ingredients)
+        ? recipeToEdit.ingredients
+            .map(
+              ing =>
+                `${ing.ingredientName || ing.name || ing} - ${
+                  ing.measure || ""
+                }`
+            )
+            .join("\n")
+        : recipeToEdit.ingredients
+      : ""
+  );
+  const [instructions, setInstructions] = useState(
+    recipeToEdit
+      ? recipeToEdit.instructions || recipeToEdit.recipeInstructions || ""
+      : ""
+  );
 
   const saverecipe = async () => {
     try {
+      // Parse ingredients from text input
+      const ingredientsList = ingredients
+        ? ingredients
+            .split("\n")
+            .filter(line => line.trim())
+            .map(line => {
+              const parts = line.split(" - ");
+              return {
+                ingredientName: parts[0]?.trim() || line.trim(),
+                measure: parts[1]?.trim() || "",
+              };
+            })
+        : [];
+
       // Initialize a new recipe object
       const newRecipe = {
         title: title,
         image: image,
         description: description,
+        ingredients: ingredientsList,
+        instructions: instructions,
       };
 
       // Retrieve existing recipes from AsyncStorage
@@ -42,6 +88,10 @@ export default function RecipesFormScreen({ route, navigation }) {
         await AsyncStorage.setItem("customrecipes", JSON.stringify(recipes));
       }
 
+      // Ensure data is saved before navigating back
+      // Wait a moment to ensure AsyncStorage write is complete
+      await new Promise(resolve => setTimeout(resolve, 50));
+
       // Navigate back to the previous screen
       navigation.goBack();
     } catch (error) {
@@ -50,7 +100,9 @@ export default function RecipesFormScreen({ route, navigation }) {
   };
 
   return (
-    <View style={styles.container}>
+    <ScrollView
+      style={styles.container}
+      contentContainerStyle={styles.scrollContent}>
       <TextInput
         placeholder="Title"
         value={title}
@@ -74,30 +126,61 @@ export default function RecipesFormScreen({ route, navigation }) {
         onChangeText={setDescription}
         multiline={true}
         numberOfLines={4}
+        style={[styles.input, { height: hp(15), textAlignVertical: "top" }]}
+      />
+      <Text style={styles.label}>
+        Ingredients (one per line, format: Name - Measure)
+      </Text>
+      <TextInput
+        placeholder="e.g., Flour - 2 cups&#10;Sugar - 1 cup&#10;Eggs - 2 pieces"
+        value={ingredients}
+        onChangeText={setIngredients}
+        multiline={true}
+        numberOfLines={6}
+        style={[styles.input, { height: hp(15), textAlignVertical: "top" }]}
+      />
+      <Text style={styles.label}>Step-by-step Instructions</Text>
+      <TextInput
+        placeholder="Enter step-by-step instructions..."
+        value={instructions}
+        onChangeText={setInstructions}
+        multiline={true}
+        numberOfLines={8}
         style={[styles.input, { height: hp(20), textAlignVertical: "top" }]}
       />
       <TouchableOpacity onPress={saverecipe} style={styles.saveButton}>
         <Text style={styles.saveButtonText}>Save recipe</Text>
       </TouchableOpacity>
-    </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  scrollContent: {
     padding: wp(4),
+    paddingBottom: hp(4),
   },
   input: {
-    marginTop: hp(4),
+    marginTop: hp(1),
     borderWidth: 1,
     borderColor: "#ddd",
-    padding: wp(.5),
+    padding: wp(2),
     marginVertical: hp(1),
+    borderRadius: 5,
+  },
+  label: {
+    fontSize: hp(1.8),
+    fontWeight: "600",
+    color: "#4B5563",
+    marginTop: hp(2),
+    marginBottom: hp(0.5),
   },
   image: {
     width: 300,
-    height:200,
+    height: 200,
     margin: wp(2),
   },
   imagePlaceholder: {
@@ -112,7 +195,7 @@ const styles = StyleSheet.create({
   },
   saveButton: {
     backgroundColor: "#4F75FF",
-    padding: wp(.5),
+    padding: wp(0.5),
     alignItems: "center",
     borderRadius: 5,
     marginTop: hp(2),

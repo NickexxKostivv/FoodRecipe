@@ -726,6 +726,484 @@ export default function HomeScreen() {
         },
       ],
     },
+    // Dessert recipes
+    {
+      idCategory: "3",
+      idFood: "15",
+      category: "Dessert",
+      recipeName: "Chocolate Lava Cake",
+      recipeInstructions:
+        "Preheat oven to 425°F (220°C). Butter and lightly flour 6 ramekins. Place them on a baking sheet. In a double boiler, melt the chocolate and butter together, stirring until smooth. Remove from heat and let cool slightly. In a large bowl, whisk together eggs, egg yolks, and sugar until thick and pale yellow. Fold the chocolate mixture into the egg mixture. Gently fold in the flour until just combined. Divide the batter among the prepared ramekins. Bake for 12-14 minutes until the edges are firm but the center is still soft. Let stand for 1 minute, then invert onto serving plates. Serve immediately with vanilla ice cream.",
+      recipeImage:
+        "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      recipeId: "dessert_01",
+      recipeCategory: "Dessert",
+      recipeOrigin: "French",
+      cookingDescription:
+        "Rich chocolate cake with a molten center, served warm with ice cream.",
+      recipeTags: "Chocolate,Cake",
+      ingredients: [
+        { ingredientName: "Dark Chocolate", measure: "200g" },
+        { ingredientName: "Butter", measure: "100g" },
+        { ingredientName: "Eggs", measure: "2 whole" },
+        { ingredientName: "Egg Yolks", measure: "2" },
+        { ingredientName: "Sugar", measure: "50g" },
+        { ingredientName: "All-purpose Flour", measure: "30g" },
+        { ingredientName: "Vanilla Ice Cream", measure: "for serving" },
+      ],
+    },
+    {
+      idCategory: "3",
+      idFood: "16",
+      category: "Dessert",
+      recipeName: "Tiramisu",
+      recipeInstructions:
+        "In a medium bowl, beat egg yolks and sugar until thick and pale. Add mascarpone and beat until smooth. In a separate bowl, beat egg whites until stiff peaks form. Gently fold egg whites into mascarpone mixture. Mix coffee and coffee liqueur in a shallow dish. Quickly dip each ladyfinger into the coffee mixture and arrange in a single layer in a serving dish. Spread half of the mascarpone mixture over the ladyfingers. Repeat with another layer of dipped ladyfingers and remaining mascarpone. Cover and refrigerate for at least 4 hours or overnight. Before serving, dust with cocoa powder.",
+      recipeImage:
+        "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      recipeId: "dessert_02",
+      recipeCategory: "Dessert",
+      recipeOrigin: "Italian",
+      cookingDescription:
+        "Classic Italian dessert with coffee-soaked ladyfingers and mascarpone cream.",
+      recipeTags: "Coffee,Cream",
+      ingredients: [
+        { ingredientName: "Mascarpone Cheese", measure: "500g" },
+        { ingredientName: "Eggs", measure: "4 separated" },
+        { ingredientName: "Sugar", measure: "100g" },
+        { ingredientName: "Ladyfingers", measure: "24 pieces" },
+        { ingredientName: "Strong Coffee", measure: "300ml" },
+        { ingredientName: "Coffee Liqueur", measure: "50ml" },
+        { ingredientName: "Cocoa Powder", measure: "for dusting" },
+      ],
+    },
+    // Lamb recipes
+    {
+      idCategory: "4",
+      idFood: "17",
+      category: "Lamb",
+      recipeName: "Lamb Chops with Mint Sauce",
+      recipeInstructions:
+        "Season lamb chops with salt and pepper. Heat olive oil in a large skillet over medium-high heat. Cook lamb chops for 3-4 minutes per side for medium-rare, or until desired doneness. Remove from pan and let rest. For the mint sauce, combine fresh mint, vinegar, sugar, and a pinch of salt in a small bowl. Stir until sugar dissolves. Serve lamb chops with mint sauce and roasted vegetables.",
+      recipeImage:
+        "https://images.unsplash.com/photo-1604503468506-a8da13d82791?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      recipeId: "lamb_01",
+      recipeCategory: "Lamb",
+      recipeOrigin: "British",
+      cookingDescription:
+        "Tender lamb chops served with traditional mint sauce.",
+      recipeTags: "Grilled,Herbs",
+      ingredients: [
+        { ingredientName: "Lamb Chops", measure: "8 pieces" },
+        { ingredientName: "Olive Oil", measure: "2 tbs" },
+        { ingredientName: "Fresh Mint", measure: "1/2 cup chopped" },
+        { ingredientName: "White Wine Vinegar", measure: "2 tbs" },
+        { ingredientName: "Sugar", measure: "1 tsp" },
+        { ingredientName: "Salt", measure: "to taste" },
+        { ingredientName: "Pepper", measure: "to taste" },
+      ],
+    },
+    {
+      idCategory: "4",
+      idFood: "18",
+      category: "Lamb",
+      recipeName: "Lamb Curry",
+      recipeInstructions:
+        "Heat oil in a large pot. Add onions and cook until golden. Add garlic, ginger, and spices (cumin, coriander, turmeric, garam masala). Cook for 2 minutes until fragrant. Add lamb pieces and brown on all sides. Add tomatoes and cook until they break down. Pour in coconut milk and water. Bring to a boil, then reduce heat and simmer for 1.5-2 hours until lamb is tender. Season with salt. Garnish with cilantro and serve with rice or naan.",
+      recipeImage:
+        "https://images.unsplash.com/photo-1585937421612-70a008356fbe?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      recipeId: "lamb_02",
+      recipeCategory: "Lamb",
+      recipeOrigin: "Indian",
+      cookingDescription:
+        "Spicy and aromatic lamb curry with Indian spices.",
+      recipeTags: "Spicy,Curry",
+      ingredients: [
+        { ingredientName: "Lamb", measure: "1kg cubed" },
+        { ingredientName: "Onions", measure: "2 chopped" },
+        { ingredientName: "Garlic", measure: "4 cloves minced" },
+        { ingredientName: "Ginger", measure: "1 tbs grated" },
+        { ingredientName: "Cumin", measure: "1 tsp" },
+        { ingredientName: "Coriander", measure: "1 tsp" },
+        { ingredientName: "Turmeric", measure: "1 tsp" },
+        { ingredientName: "Garam Masala", measure: "1 tsp" },
+        { ingredientName: "Tomatoes", measure: "2 chopped" },
+        { ingredientName: "Coconut Milk", measure: "400ml" },
+        { ingredientName: "Cilantro", measure: "for garnish" },
+      ],
+    },
+    // Miscellaneous recipes
+    {
+      idCategory: "5",
+      idFood: "19",
+      category: "Miscellaneous",
+      recipeName: "Fried Rice",
+      recipeInstructions:
+        "Cook rice according to package instructions and let cool completely. Heat oil in a large wok or skillet over high heat. Add eggs and scramble, then remove. Add more oil, then add garlic and ginger. Add vegetables and stir-fry for 2-3 minutes. Add cooked rice and stir-fry, breaking up any clumps. Add soy sauce, sesame oil, and scrambled eggs. Toss everything together and cook for another 2 minutes. Garnish with green onions and serve hot.",
+      recipeImage:
+        "https://images.unsplash.com/photo-1603133872878-684f208fb84b?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      recipeId: "misc_01",
+      recipeCategory: "Miscellaneous",
+      recipeOrigin: "Chinese",
+      cookingDescription:
+        "Classic fried rice with vegetables and eggs.",
+      recipeTags: "Rice,Stir-fry",
+      ingredients: [
+        { ingredientName: "Cooked Rice", measure: "3 cups" },
+        { ingredientName: "Eggs", measure: "2 beaten" },
+        { ingredientName: "Vegetable Oil", measure: "2 tbs" },
+        { ingredientName: "Garlic", measure: "2 cloves minced" },
+        { ingredientName: "Ginger", measure: "1 tsp grated" },
+        { ingredientName: "Mixed Vegetables", measure: "1 cup" },
+        { ingredientName: "Soy Sauce", measure: "2 tbs" },
+        { ingredientName: "Sesame Oil", measure: "1 tsp" },
+        { ingredientName: "Green Onions", measure: "2 chopped" },
+      ],
+    },
+    {
+      idCategory: "5",
+      idFood: "20",
+      category: "Miscellaneous",
+      recipeName: "Quiche Lorraine",
+      recipeInstructions:
+        "Preheat oven to 375°F (190°C). Roll out pastry and line a pie dish. Prick the bottom with a fork and blind bake for 10 minutes. Cook bacon until crispy, then crumble. Whisk together eggs, cream, salt, pepper, and nutmeg. Spread bacon and cheese in the pastry shell. Pour egg mixture over. Bake for 30-35 minutes until set and golden. Let cool slightly before serving.",
+      recipeImage:
+        "https://images.unsplash.com/photo-1609501676725-7186f1f86a77?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      recipeId: "misc_02",
+      recipeCategory: "Miscellaneous",
+      recipeOrigin: "French",
+      cookingDescription:
+        "Classic French quiche with bacon and cheese.",
+      recipeTags: "Pie,Breakfast",
+      ingredients: [
+        { ingredientName: "Pie Pastry", measure: "1 sheet" },
+        { ingredientName: "Bacon", measure: "200g" },
+        { ingredientName: "Eggs", measure: "4" },
+        { ingredientName: "Heavy Cream", measure: "200ml" },
+        { ingredientName: "Gruyere Cheese", measure: "100g grated" },
+        { ingredientName: "Salt", measure: "1/2 tsp" },
+        { ingredientName: "Pepper", measure: "1/4 tsp" },
+        { ingredientName: "Nutmeg", measure: "pinch" },
+      ],
+    },
+    // Pasta recipes
+    {
+      idCategory: "6",
+      idFood: "21",
+      category: "Pasta",
+      recipeName: "Spaghetti Carbonara",
+      recipeInstructions:
+        "Cook spaghetti according to package directions. Meanwhile, cook pancetta in a large skillet until crispy. Remove from heat. In a bowl, whisk together eggs, parmesan, and black pepper. Drain pasta, reserving some pasta water. Immediately add hot pasta to the skillet with pancetta. Remove from heat and quickly toss with egg mixture, adding pasta water as needed to create a creamy sauce. Serve immediately with extra parmesan.",
+      recipeImage:
+        "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      recipeId: "pasta_01",
+      recipeCategory: "Pasta",
+      recipeOrigin: "Italian",
+      cookingDescription:
+        "Creamy pasta with pancetta, eggs, and parmesan cheese.",
+      recipeTags: "Creamy,Italian",
+      ingredients: [
+        { ingredientName: "Spaghetti", measure: "400g" },
+        { ingredientName: "Pancetta", measure: "200g diced" },
+        { ingredientName: "Eggs", measure: "3" },
+        { ingredientName: "Parmesan Cheese", measure: "100g grated" },
+        { ingredientName: "Black Pepper", measure: "1 tsp" },
+        { ingredientName: "Salt", measure: "to taste" },
+      ],
+    },
+    {
+      idCategory: "6",
+      idFood: "22",
+      category: "Pasta",
+      recipeName: "Penne Arrabbiata",
+      recipeInstructions:
+        "Cook penne according to package directions. Heat olive oil in a large pan. Add garlic and red chili flakes, cook for 1 minute. Add canned tomatoes, breaking them up with a spoon. Simmer for 15 minutes until sauce thickens. Season with salt. Drain pasta and add to the sauce. Toss together and serve with fresh basil and parmesan cheese.",
+      recipeImage:
+        "https://images.unsplash.com/photo-1551462147-6e923d71c8b4?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      recipeId: "pasta_02",
+      recipeCategory: "Pasta",
+      recipeOrigin: "Italian",
+      cookingDescription:
+        "Spicy tomato pasta with garlic and chili.",
+      recipeTags: "Spicy,Tomato",
+      ingredients: [
+        { ingredientName: "Penne", measure: "400g" },
+        { ingredientName: "Olive Oil", measure: "2 tbs" },
+        { ingredientName: "Garlic", measure: "4 cloves minced" },
+        { ingredientName: "Red Chili Flakes", measure: "1 tsp" },
+        { ingredientName: "Canned Tomatoes", measure: "400g" },
+        { ingredientName: "Fresh Basil", measure: "handful" },
+        { ingredientName: "Parmesan Cheese", measure: "for serving" },
+        { ingredientName: "Salt", measure: "to taste" },
+      ],
+    },
+    // Pork recipes
+    {
+      idCategory: "7",
+      idFood: "23",
+      category: "Pork",
+      recipeName: "Pork Tenderloin with Apple Sauce",
+      recipeInstructions:
+        "Preheat oven to 400°F (200°C). Season pork tenderloin with salt, pepper, and herbs. Heat oil in an oven-safe skillet. Sear pork on all sides until browned. Transfer to oven and roast for 20-25 minutes until internal temperature reaches 145°F. Let rest for 10 minutes. For apple sauce, cook chopped apples with sugar, cinnamon, and a little water until soft. Mash or blend until smooth. Slice pork and serve with apple sauce.",
+      recipeImage:
+        "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      recipeId: "pork_01",
+      recipeCategory: "Pork",
+      recipeOrigin: "American",
+      cookingDescription:
+        "Tender pork tenderloin served with homemade apple sauce.",
+      recipeTags: "Roast,Fruit",
+      ingredients: [
+        { ingredientName: "Pork Tenderloin", measure: "500g" },
+        { ingredientName: "Olive Oil", measure: "2 tbs" },
+        { ingredientName: "Apples", measure: "3 peeled and chopped" },
+        { ingredientName: "Sugar", measure: "2 tbs" },
+        { ingredientName: "Cinnamon", measure: "1/2 tsp" },
+        { ingredientName: "Salt", measure: "to taste" },
+        { ingredientName: "Pepper", measure: "to taste" },
+        { ingredientName: "Fresh Herbs", measure: "2 tbs" },
+      ],
+    },
+    {
+      idCategory: "7",
+      idFood: "24",
+      category: "Pork",
+      recipeName: "Pork Belly Ramen",
+      recipeInstructions:
+        "Score pork belly skin and rub with salt. Roast at 450°F for 30 minutes, then reduce to 300°F and cook for 2 hours. For broth, simmer pork bones, ginger, garlic, and soy sauce for 4 hours. Strain and season. Cook ramen noodles according to package. Soft boil eggs (6 minutes). Slice pork belly. Assemble bowls with noodles, broth, pork belly, eggs, nori, and green onions.",
+      recipeImage:
+        "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      recipeId: "pork_02",
+      recipeCategory: "Pork",
+      recipeOrigin: "Japanese",
+      cookingDescription:
+        "Rich ramen with crispy pork belly and soft-boiled eggs.",
+      recipeTags: "Noodles,Asian",
+      ingredients: [
+        { ingredientName: "Pork Belly", measure: "500g" },
+        { ingredientName: "Ramen Noodles", measure: "4 servings" },
+        { ingredientName: "Pork Bones", measure: "1kg" },
+        { ingredientName: "Ginger", measure: "2 inches" },
+        { ingredientName: "Garlic", measure: "6 cloves" },
+        { ingredientName: "Soy Sauce", measure: "100ml" },
+        { ingredientName: "Eggs", measure: "4" },
+        { ingredientName: "Nori", measure: "4 sheets" },
+        { ingredientName: "Green Onions", measure: "4 chopped" },
+      ],
+    },
+    // Seafood recipes
+    {
+      idCategory: "8",
+      idFood: "25",
+      category: "Seafood",
+      recipeName: "Grilled Salmon with Lemon",
+      recipeInstructions:
+        "Preheat grill to medium-high. Season salmon fillets with salt, pepper, and dill. Brush with olive oil. Grill skin-side down for 5-6 minutes, then flip and grill for another 3-4 minutes until fish flakes easily. Squeeze fresh lemon juice over before serving. Serve with steamed vegetables or rice.",
+      recipeImage:
+        "https://images.unsplash.com/photo-1467003909585-2f8a72700288?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      recipeId: "seafood_01",
+      recipeCategory: "Seafood",
+      recipeOrigin: "Mediterranean",
+      cookingDescription:
+        "Simple grilled salmon with fresh lemon and herbs.",
+      recipeTags: "Grilled,Healthy",
+      ingredients: [
+        { ingredientName: "Salmon Fillets", measure: "4 pieces" },
+        { ingredientName: "Olive Oil", measure: "2 tbs" },
+        { ingredientName: "Lemon", measure: "2 juiced" },
+        { ingredientName: "Fresh Dill", measure: "2 tbs chopped" },
+        { ingredientName: "Salt", measure: "to taste" },
+        { ingredientName: "Pepper", measure: "to taste" },
+      ],
+    },
+    {
+      idCategory: "8",
+      idFood: "26",
+      category: "Seafood",
+      recipeName: "Shrimp Scampi",
+      recipeInstructions:
+        "Cook linguine according to package directions. Heat olive oil and butter in a large skillet. Add garlic and red pepper flakes, cook for 1 minute. Add shrimp and cook for 2-3 minutes per side until pink. Add white wine and lemon juice, simmer for 2 minutes. Add cooked pasta and toss. Stir in parsley and parmesan. Serve immediately.",
+      recipeImage:
+        "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      recipeId: "seafood_02",
+      recipeCategory: "Seafood",
+      recipeOrigin: "Italian",
+      cookingDescription:
+        "Garlicky shrimp pasta with white wine and lemon.",
+      recipeTags: "Pasta,Garlic",
+      ingredients: [
+        { ingredientName: "Linguine", measure: "400g" },
+        { ingredientName: "Shrimp", measure: "500g peeled" },
+        { ingredientName: "Butter", measure: "3 tbs" },
+        { ingredientName: "Olive Oil", measure: "2 tbs" },
+        { ingredientName: "Garlic", measure: "4 cloves minced" },
+        { ingredientName: "White Wine", measure: "100ml" },
+        { ingredientName: "Lemon Juice", measure: "2 tbs" },
+        { ingredientName: "Parsley", measure: "2 tbs chopped" },
+        { ingredientName: "Parmesan", measure: "50g grated" },
+      ],
+    },
+    // Side recipes
+    {
+      idCategory: "9",
+      idFood: "27",
+      category: "Side",
+      recipeName: "Roasted Vegetables",
+      recipeInstructions:
+        "Preheat oven to 425°F (220°C). Cut vegetables into uniform pieces. Toss with olive oil, salt, pepper, and herbs. Spread in a single layer on a baking sheet. Roast for 25-30 minutes, turning halfway, until vegetables are tender and caramelized. Serve hot as a side dish.",
+      recipeImage:
+        "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      recipeId: "side_01",
+      recipeCategory: "Side",
+      recipeOrigin: "Mediterranean",
+      cookingDescription:
+        "Colorful mix of roasted seasonal vegetables.",
+      recipeTags: "Vegetables,Healthy",
+      ingredients: [
+        { ingredientName: "Bell Peppers", measure: "2 sliced" },
+        { ingredientName: "Zucchini", measure: "2 sliced" },
+        { ingredientName: "Carrots", measure: "3 chopped" },
+        { ingredientName: "Broccoli", measure: "1 head" },
+        { ingredientName: "Olive Oil", measure: "3 tbs" },
+        { ingredientName: "Salt", measure: "to taste" },
+        { ingredientName: "Pepper", measure: "to taste" },
+        { ingredientName: "Herbs", measure: "2 tbs mixed" },
+      ],
+    },
+    {
+      idCategory: "9",
+      idFood: "28",
+      category: "Side",
+      recipeName: "Garlic Mashed Potatoes",
+      recipeInstructions:
+        "Peel and cut potatoes into chunks. Boil in salted water until tender, about 15-20 minutes. Drain well. Meanwhile, heat butter and garlic in a small pan until garlic is fragrant. Mash potatoes with butter mixture, milk, and cream. Season with salt and pepper. Whip until smooth and creamy. Serve hot.",
+      recipeImage:
+        "https://images.unsplash.com/photo-1572441713132-51c75654db73?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      recipeId: "side_02",
+      recipeCategory: "Side",
+      recipeOrigin: "American",
+      cookingDescription:
+        "Creamy mashed potatoes with roasted garlic.",
+      recipeTags: "Comfort Food,Creamy",
+      ingredients: [
+        { ingredientName: "Potatoes", measure: "1kg" },
+        { ingredientName: "Butter", measure: "50g" },
+        { ingredientName: "Garlic", measure: "4 cloves" },
+        { ingredientName: "Milk", measure: "100ml" },
+        { ingredientName: "Heavy Cream", measure: "50ml" },
+        { ingredientName: "Salt", measure: "to taste" },
+        { ingredientName: "Pepper", measure: "to taste" },
+      ],
+    },
+    // Starter recipes
+    {
+      idCategory: "10",
+      idFood: "29",
+      category: "Starter",
+      recipeName: "Bruschetta",
+      recipeInstructions:
+        "Preheat oven to 400°F (200°C). Slice bread and brush with olive oil. Toast in oven for 5-7 minutes until golden. Meanwhile, dice tomatoes and mix with garlic, basil, olive oil, balsamic vinegar, salt, and pepper. Let marinate for 10 minutes. Top toasted bread with tomato mixture. Drizzle with more olive oil and serve immediately.",
+      recipeImage:
+        "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      recipeId: "starter_01",
+      recipeCategory: "Starter",
+      recipeOrigin: "Italian",
+      cookingDescription:
+        "Classic Italian appetizer with fresh tomatoes and basil.",
+      recipeTags: "Bread,Tomato",
+      ingredients: [
+        { ingredientName: "Baguette", measure: "1 loaf sliced" },
+        { ingredientName: "Tomatoes", measure: "4 diced" },
+        { ingredientName: "Garlic", measure: "2 cloves minced" },
+        { ingredientName: "Fresh Basil", measure: "1/4 cup chopped" },
+        { ingredientName: "Olive Oil", measure: "3 tbs" },
+        { ingredientName: "Balsamic Vinegar", measure: "1 tbs" },
+        { ingredientName: "Salt", measure: "to taste" },
+        { ingredientName: "Pepper", measure: "to taste" },
+      ],
+    },
+    {
+      idCategory: "10",
+      idFood: "30",
+      category: "Starter",
+      recipeName: "Spring Rolls",
+      recipeInstructions:
+        "Soak rice paper wrappers in warm water until pliable. Place on a clean surface. Add cooked vermicelli, lettuce, carrots, cucumber, mint, and cooked shrimp or tofu. Fold sides in, then roll tightly. For dipping sauce, mix hoisin sauce, peanut butter, soy sauce, and a little water. Serve spring rolls with dipping sauce.",
+      recipeImage:
+        "https://images.unsplash.com/photo-1615367423051-739d61349e1d?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      recipeId: "starter_02",
+      recipeCategory: "Starter",
+      recipeOrigin: "Vietnamese",
+      cookingDescription:
+        "Fresh spring rolls with vegetables and dipping sauce.",
+      recipeTags: "Fresh,Asian",
+      ingredients: [
+        { ingredientName: "Rice Paper Wrappers", measure: "12 sheets" },
+        { ingredientName: "Vermicelli Noodles", measure: "200g cooked" },
+        { ingredientName: "Lettuce", measure: "1 head" },
+        { ingredientName: "Carrots", measure: "2 julienned" },
+        { ingredientName: "Cucumber", measure: "1 julienned" },
+        { ingredientName: "Fresh Mint", measure: "1/2 cup" },
+        { ingredientName: "Shrimp", measure: "12 cooked" },
+        { ingredientName: "Hoisin Sauce", measure: "4 tbs" },
+        { ingredientName: "Peanut Butter", measure: "2 tbs" },
+      ],
+    },
+    // Vegan recipes
+    {
+      idCategory: "11",
+      idFood: "31",
+      category: "Vegan",
+      recipeName: "Vegan Buddha Bowl",
+      recipeInstructions:
+        "Cook quinoa according to package directions. Roast sweet potatoes and chickpeas with olive oil and spices at 400°F for 25 minutes. Steam broccoli until tender. Prepare tahini dressing by mixing tahini, lemon juice, water, garlic, and salt. Arrange quinoa, roasted vegetables, chickpeas, avocado, and greens in a bowl. Drizzle with tahini dressing and serve.",
+      recipeImage:
+        "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      recipeId: "vegan_01",
+      recipeCategory: "Vegan",
+      recipeOrigin: "Modern",
+      cookingDescription:
+        "Nutritious bowl with quinoa, roasted vegetables, and tahini dressing.",
+      recipeTags: "Healthy,Bowl",
+      ingredients: [
+        { ingredientName: "Quinoa", measure: "1 cup cooked" },
+        { ingredientName: "Sweet Potatoes", measure: "2 cubed" },
+        { ingredientName: "Chickpeas", measure: "1 can" },
+        { ingredientName: "Broccoli", measure: "1 head" },
+        { ingredientName: "Avocado", measure: "1 sliced" },
+        { ingredientName: "Mixed Greens", measure: "2 cups" },
+        { ingredientName: "Tahini", measure: "3 tbs" },
+        { ingredientName: "Lemon Juice", measure: "2 tbs" },
+        { ingredientName: "Garlic", measure: "1 clove minced" },
+      ],
+    },
+    {
+      idCategory: "11",
+      idFood: "32",
+      category: "Vegan",
+      recipeName: "Vegan Pad Thai",
+      recipeInstructions:
+        "Soak rice noodles in warm water for 30 minutes. Heat oil in a wok. Add tofu and cook until golden. Add garlic and shallots, cook for 1 minute. Push to one side, add eggs (or omit for vegan) and scramble. Add drained noodles and pad thai sauce. Toss everything together. Add bean sprouts and cook for 2 minutes. Serve with lime wedges, peanuts, and cilantro.",
+      recipeImage:
+        "https://images.unsplash.com/photo-1559314809-0d155014e29e?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      recipeId: "vegan_02",
+      recipeCategory: "Vegan",
+      recipeOrigin: "Thai",
+      cookingDescription:
+        "Classic pad thai made vegan with tofu and vegetables.",
+      recipeTags: "Noodles,Asian",
+      ingredients: [
+        { ingredientName: "Rice Noodles", measure: "200g" },
+        { ingredientName: "Tofu", measure: "300g cubed" },
+        { ingredientName: "Garlic", measure: "3 cloves" },
+        { ingredientName: "Shallots", measure: "2 sliced" },
+        { ingredientName: "Bean Sprouts", measure: "1 cup" },
+        { ingredientName: "Pad Thai Sauce", measure: "4 tbs" },
+        { ingredientName: "Lime", measure: "2 wedges" },
+        { ingredientName: "Peanuts", measure: "2 tbs crushed" },
+        { ingredientName: "Cilantro", measure: "for garnish" },
+      ],
+    },
   ]);
 
   const handleChangeCategory = category => {
