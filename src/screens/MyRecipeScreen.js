@@ -22,25 +22,63 @@ import {
   
     useEffect(() => {
       const fetchrecipes = async () => {
-        
-        };
+        try {
+          const recipesJson = await AsyncStorage.getItem("customrecipes");
+          if (recipesJson) {
+            const parsedRecipes = JSON.parse(recipesJson);
+            setrecipes(parsedRecipes);
+          }
+          setLoading(false);
+        } catch (error) {
+          console.error("Error fetching recipes:", error);
+          setLoading(false);
+        }
+      };
   
       fetchrecipes();
     }, []);
   
     const handleAddrecipe = () => {
-
+      navigation.navigate("RecipesFormScreen");
     };
   
     const handlerecipeClick = (recipe) => {
-
+      navigation.navigate("CustomRecipesScreen", { recipe });
     };
     const deleterecipe = async (index) => {
-    
+      try {
+        const updatedrecipes = [...recipes];
+        updatedrecipes.splice(index, 1);
+        await AsyncStorage.setItem(
+          "customrecipes",
+          JSON.stringify(updatedrecipes)
+        );
+        setrecipes(updatedrecipes);
+      } catch (error) {
+        console.error("Error deleting recipe:", error);
+      }
     };
   
     const editrecipe = (recipe, index) => {
-
+      navigation.navigate("RecipesFormScreen", {
+        recipeToEdit: recipe,
+        recipeIndex: index,
+        onrecipeEdited: () => {
+          // Refresh recipes after editing
+          const fetchrecipes = async () => {
+            try {
+              const recipesJson = await AsyncStorage.getItem("customrecipes");
+              if (recipesJson) {
+                const parsedRecipes = JSON.parse(recipesJson);
+                setrecipes(parsedRecipes);
+              }
+            } catch (error) {
+              console.error("Error fetching recipes:", error);
+            }
+          };
+          fetchrecipes();
+        },
+      });
     };
   
     return (
@@ -64,17 +102,36 @@ import {
               recipes.map((recipe, index) => (
                 <View key={index} style={styles.recipeCard} testID="recipeCard">
                   <TouchableOpacity testID="handlerecipeBtn" onPress={() => handlerecipeClick(recipe)}>
-                  
+                    {recipe.image && (
+                      <Image
+                        source={{ uri: recipe.image }}
+                        style={styles.recipeImage}
+                      />
+                    )}
                     <Text style={styles.recipeTitle}>{recipe.title}</Text>
                     <Text style={styles.recipeDescription} testID="recipeDescp">
-                  
+                      {recipe.description
+                        ? recipe.description.length > 50
+                          ? `${recipe.description.substring(0, 50)}...`
+                          : recipe.description
+                        : ""}
                     </Text>
                   </TouchableOpacity>
   
                   {/* Edit and Delete Buttons */}
                   <View style={styles.actionButtonsContainer} testID="editDeleteButtons">
-                    
-                
+                    <TouchableOpacity
+                      onPress={() => editrecipe(recipe, index)}
+                      style={styles.editButton}
+                    >
+                      <Text style={styles.editButtonText}>Edit</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                      onPress={() => deleterecipe(index)}
+                      style={styles.deleteButton}
+                    >
+                      <Text style={styles.deleteButtonText}>Delete</Text>
+                    </TouchableOpacity>
                   </View>
                 </View>
               ))

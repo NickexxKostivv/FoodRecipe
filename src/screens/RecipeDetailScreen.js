@@ -11,6 +11,14 @@ import { toggleFavorite } from "../redux/favoritesSlice"; // Redux action
 export default function RecipeDetailScreen(props) {
   const recipe = props.route.params; // recipe passed from previous screen
 
+  if (!recipe) {
+    return (
+      <View style={styles.notFoundContainer}>
+        <Text style={styles.notFoundText}>Recipe not found</Text>
+      </View>
+    );
+  }
+
   const dispatch = useDispatch();
   const favoriterecipes = useSelector(
     (state) => state.favorites.favoriterecipes
@@ -33,7 +41,10 @@ export default function RecipeDetailScreen(props) {
     >
       {/* recipe Image */}
       <View style={styles.imageContainer} testID="imageContainer">
-     
+        <Image
+          source={{ uri: recipe.recipeImage }}
+          style={styles.recipeImage}
+        />
       </View>
 
       {/* Back Button and Favorite Button */}
@@ -66,104 +77,59 @@ export default function RecipeDetailScreen(props) {
             testID="recipeDetailsContainer"
           >
             <Text style={styles.recipeTitle} testID="recipeTitle">
-         
-              
-              </Text>
+              {recipe.recipeName}
+            </Text>
             <Text style={styles.recipeCategory} testID="recipeCategory">
-              </Text>
+              {recipe.recipeCategory}
+            </Text>
           </View>
           <View style={styles.miscContainer} testID="miscContainer">
-        
-      </View>
+            <View style={styles.miscItem}>
+              <Text style={styles.miscIcon}>⏱</Text>
+              <Text style={styles.miscText}>30 mins</Text>
+            </View>
+            <View style={styles.miscItem}>
+              <Text style={styles.miscIcon}>👥</Text>
+              <Text style={styles.miscText}>4 servings</Text>
+            </View>
+            <View style={styles.miscItem}>
+              <Text style={styles.miscIcon}>🔥</Text>
+              <Text style={styles.miscText}>350 cal</Text>
+            </View>
+            <View style={styles.miscItem}>
+              <Text style={styles.miscIcon}>🍽</Text>
+              <Text style={styles.miscText}>{recipe.recipeCategory}</Text>
+            </View>
+          </View>
+        </View>
 
       {/* Ingredients */}
-      <View style={styles.sectionContainer}>
-     
+      <View style={styles.sectionContainer} testID="sectionContainer">
+        <Text style={styles.sectionTitle}>Ingredients</Text>
+        <View style={styles.ingredientsList} testID="ingredientsList">
+          {recipe.ingredients && recipe.ingredients.map((ingredient, index) => (
+            <View key={index} style={styles.ingredientItem}>
+              <View style={styles.ingredientBullet} />
+              <Text style={styles.ingredientText}>
+                {ingredient.ingredientName} - {ingredient.measure}
+              </Text>
+            </View>
+          ))}
+        </View>
       </View>
 
       {/* Instructions */}
       <View style={styles.sectionContainer} testID="sectionContainer">
-        
-        </View>
-          {/* Description */}
-         
-        </View>
+        <Text style={styles.sectionTitle}>Instructions</Text>
+        <Text style={styles.instructionsText}>
+          {recipe.recipeInstructions}
+        </Text>
+      </View>
     </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: "white",
-    flex: 1,
-  },
-  scrollContent: {
-    paddingBottom: 30,
-  },
-  imageContainer: {
-    flexDirection: "row",
-    justifyContent: "center",
-  },
-  recipeImage: {
-    width: wp(98),
-    height: hp(40),
-    borderRadius: 20,
-    borderBottomLeftRadius: 25,
-    borderBottomRightRadius: 25,
-    marginTop: 4,
-  },
-  topButtonsContainer: {
-    width: "100%",
-    position: "absolute",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    paddingTop: hp(4),
-  },
-  backButton: {
-    padding: 8,
-    borderRadius: 50,
-    marginLeft: wp(5),
-    backgroundColor: "white",
-  },
-  favoriteButton: {
-    padding: 8,
-    borderRadius: 50,
-    borderWidth: 1,
-    marginRight: wp(5),
-  },
-
-  contentContainer: {
-    paddingHorizontal: wp(4),
-    paddingTop: hp(4),
-  },
-  recipeDetailsContainer: {
-    marginBottom: hp(2),
-  },
-  recipeTitle: {
-    fontSize: hp(3),
-    fontWeight: "bold",
-    color: "#4B5563", // text-neutral-700
-  },
-  recipeCategory: {
-    fontSize: hp(2),
-    fontWeight: "500",
-    color: "#9CA3AF", // text-neutral-500
-  },
-  sectionContainer: {
-    marginBottom: hp(2),
-  },
-  sectionTitle: {
-    fontSize: hp(2.5),
-    fontWeight: "bold",
-    color: "#4B5563", // text-neutral-700
-  },
-  descriptionText: {
-    fontSize: hp(1.8),
-    color: "#4B5563", // text-neutral-700
-    textAlign: "justify",
-    lineHeight: hp(2.5),
-  },
   container: {
     backgroundColor: "white",
     flex: 1,
@@ -191,39 +157,33 @@ const styles = StyleSheet.create({
     paddingTop: hp(4),
   },
   backButton: {
-    padding: 10,
-    borderRadius: 20,
-    backgroundColor: "#f0f0f0",
+    padding: 8,
+    borderRadius: 50,
     marginLeft: wp(5),
-  },
-  backButtonText: {
-    fontSize: hp(2),
-    color: "#333",
-    fontWeight: "bold",
+    backgroundColor: "white",
   },
   favoriteButton: {
-    padding: 10,
-    borderRadius: 20,
+    padding: 8,
+    borderRadius: 50,
+    borderWidth: 1,
     marginRight: wp(5),
   },
-  favoriteButtonText: {
-    fontSize: hp(2),
-    color: "red",
+  contentContainer: {
+    paddingHorizontal: wp(4),
+    paddingTop: hp(4),
   },
-  mealName: {
-    fontSize: hp(4),
+  recipeDetailsContainer: {
+    marginBottom: hp(2),
+  },
+  recipeTitle: {
+    fontSize: hp(3),
     fontWeight: "bold",
-    color: "#333",
-    textAlign: "center",
-    marginVertical: 10,
-    fontFamily: "Roboto",
+    color: "#4B5563", // text-neutral-700
   },
-  mealCategory: {
+  recipeCategory: {
     fontSize: hp(2),
-    color: "#666",
-    textAlign: "center",
-    marginBottom: 20,
-    fontFamily: "Roboto",
+    fontWeight: "500",
+    color: "#9CA3AF", // text-neutral-500
   },
   miscContainer: {
     flexDirection: "row",
@@ -246,18 +206,16 @@ const styles = StyleSheet.create({
   miscText: {
     fontSize: hp(2),
     fontWeight: "600",
-    fontFamily: "Lato",
   },
   sectionContainer: {
     marginHorizontal: wp(5),
     marginBottom: 20,
   },
   sectionTitle: {
-    fontSize: hp(2.8),
+    fontSize: hp(2.5),
     fontWeight: "bold",
-    color: "#333",
+    color: "#4B5563", // text-neutral-700
     marginBottom: 10,
-    fontFamily: "Lato",
   },
   ingredientsList: {
     marginLeft: wp(4),
@@ -281,14 +239,12 @@ const styles = StyleSheet.create({
   ingredientText: {
     fontSize: hp(1.9),
     color: "#333",
-    fontFamily: "Lato",
   },
   instructionsText: {
     fontSize: hp(2),
     color: "#444",
     lineHeight: hp(3),
     textAlign: "justify",
-    fontFamily: "Lato",
   },
   videoLink: {
     fontSize: hp(2.2),

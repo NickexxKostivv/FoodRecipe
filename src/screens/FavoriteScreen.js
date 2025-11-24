@@ -18,12 +18,10 @@ export default function FavoriteScreen() {
   const navigation = useNavigation();
 
   // Assuming you have a similar structure for recipes in your Redux store
-  const favoriteRecipes = useSelector((state) => state.favorites);
+  const favoriteRecipes = useSelector(state => state.favorites);
   const favoriteRecipesList = favoriteRecipes?.favoriterecipes || [];
   console.log(favoriteRecipes.favoriterecipes);
-  console.log('favoriteRecipesList',favoriteRecipesList);
-  
-  
+  console.log("favoriteRecipesList", favoriteRecipesList);
 
   if (favoriteRecipesList.length === 0) {
     return (
@@ -39,26 +37,41 @@ export default function FavoriteScreen() {
             marginTop: 10,
             width: 100,
             alignItems: "center ",
-          }}
-        >
+          }}>
           <Text style={{ color: "#fff" }}>Go back</Text>
         </TouchableOpacity>
       </View>
     );
   }
 
+  const renderItem = ({ item }) => (
+    <TouchableOpacity
+      style={styles.cardContainer}
+      onPress={() => navigation.navigate("RecipeDetail", item)}>
+      <Image source={{ uri: item.recipeImage }} style={styles.recipeImage} />
+      <Text style={styles.recipeTitle} numberOfLines={1}>
+        {item.recipeName && item.recipeName.length > 20
+          ? `${item.recipeName.substring(0, 20)}...`
+          : item.recipeName}
+      </Text>
+    </TouchableOpacity>
+  );
+
+  const keyExtractor = (item, index) => {
+    return item.idFood || item.recipeId || index.toString();
+  };
+
   return (
     <>
       {/* Heading */}
-      <View testID="FavoriteRecipes">
+      <View testID="favoriteRecipes">
         <Text
           style={{ fontSize: hp(3.8), marginTop: hp(4), marginLeft: 20 }}
-          className="font-semibold text-neutral-600"
-        >
+          className="font-semibold text-neutral-600">
           My Favorite Recipes
         </Text>
       </View>
-    
+
       <TouchableOpacity
         onPress={() => navigation.goBack()}
         style={{
@@ -69,11 +82,17 @@ export default function FavoriteScreen() {
           width: 100,
           alignItems: "center",
           marginLeft: 20,
-        }}
-      >
+        }}>
         <Text style={{ color: "#fff" }}>Go back</Text>
       </TouchableOpacity>
-    
+
+      <FlatList
+        data={favoriteRecipesList}
+        renderItem={renderItem}
+        keyExtractor={keyExtractor}
+        contentContainerStyle={styles.listContentContainer}
+        showsVerticalScrollIndicator={false}
+      />
     </>
   );
 }
